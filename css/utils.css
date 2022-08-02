@@ -1,0 +1,11 @@
+.flex-all-centre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-center{
+    text-align: center;
+}
+.emphasis{
+    color: #388e3c;
+}

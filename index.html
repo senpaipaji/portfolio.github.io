@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+
+        :root {
+            --color-0: #e4ecf8;
+            --color-1: #DEFCF9;
+            --color-2: #CADEFC;
+            --color-3: #C3BEF0;
+            --color-4: #CCA8E9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto Mono', monospace;
+
+        }
+
+        body {
+            background-color: var(--color-1);
+        }
+
+        nav {
+            display: flex;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 105px;
+            padding: 0px 15px;
+        }
+
+        .search {
+
+            display: flex;
+            align-items: center;
+            margin: 0 30px;
+        }
+
+        .search input {
+            padding: 10px;
+            width: 25vw;
+            height: 2vh;
+            margin: 0 16px 0 56px;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+            border-style: none;
+        }
+
+        .search button {
+            font-family: 'Roboto Mono', monospace;
+
+        }
+
+        .btn {
+            padding: 1vh 1vw;
+            color: white;
+            background-color: var(--color-4);
+            border-radius: 10px;
+            border-style: solid;
+            border-color: white;
+        }
+
+        .btn:hover {
+            padding: 1vh 1vw;
+            color: grey;
+            background-color: var(--color-4);
+            border-radius: 10px;
+            border-style: solid;
+            font-weight: 1000;
+            border-color: white;
+        }
+
+
+        nav ul {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 8vh;
+        }
+
+        nav ul li {
+            list-style: none;
+            padding: 0 1vw;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            text-decoration: none;
+            color: var(--color-3);
+            font-weight: bolder;
+        }
+
+        header {
+            display: inline-block;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            background-color: var(--color-4);
+            color: white;
+            border: 2px solid var(--color-4);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+
+
+        .backtext {
+            z-index: -1;
+            position: fixed;
+            right: 0;
+            top: 5vh;
+
+        }
+
+        .backtext P {
+            position: sticky;
+            font-family: 'Monoton', cursive;
+            font-size: 15vh;
+            color: white;
+
+        }
+
+        main {
+            margin-top: 25vh;
+        }
+
+        .container {
+            min-height: calc(200vh - 8vh - 12vh);
+            /* background-color: var(--color-1); */
+            margin: 8vh 2vw 0 2vw;
+        }
+
+        .card {
+            padding: 10px;
+            background-color: var(--color-2);
+
+        }
+
+        .card h2 {
+            background-color: #e4ecf8;
+            padding: 5px;
+            max-width: 91vw;
+            margin: auto;
+
+        }
+
+        .card-items {
+            overflow-x: hidden;
+            background: none;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .card-item {
+            display: inline-flex;
+            justify-content: space-between;
+            flex-direction: column;
+            background-color: white;
+
+            margin: 0 1vw;
+        }
+
+        .card-image {
+            background-color: white;
+            overflow: hidden;
+            min-width: 86px;
+            width: 13vw;
+            height: 30vh;
+        }
+
+        .card-image img {
+            max-width: 13vw;
+            min-width: 118px;
+        }
+
+        .lines {
+            display: flex;
+            flex-direction: column;
+            /* font-weight: 900; */
+            /* font-style: bold; */
+            font-size: 2vh;
+        }
+
+        .lines p {
+            background: none;
+            height: 2.1vh;
+            margin: 5px 0;
+            overflow: hidden;
+        }
+
+
+
+        footer {
+            height: 12vh;
+            background-color: var(--color-4);
+            color: white;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .flex-all-centre {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .emphasis {
+            color: #388e3c;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="logo"></div>
+            <div class="search">
+                <input type="text" placeholder="Searach for Products, Brands and More">
+                <button class="btn">search</button>
+            </div>
+            <ul>
+                <li><a href="#">LOGIN</a></li>
+                <li><a href="#">MORE</a></li>
+                <li><a href="#">CART</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <span class="backtext">
+            <p>FLIPKART</p>
+        </span>
+        <div class="container">
+            <div class="card">
+                <h2>TOP DEALS ON FASHON</h2><br>
+                <div class="card-items">
+                    <!--/////////////////////////////-->
+                    <div class="card-item">
+                        <div class="card-image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="lines">
+                            <p class="text-center">Adidas, puma and more</p>
+                            <p class="text-center emphasis">Min. 45% off</p>
+                            <p class="text-center">women's footware</p>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="lines">
+                            <p class="text-center">woodland,crocs,red tape..</p>
+                            <p class="text-center emphasis">Min. 40-80% off</p>
+                            <p class="text-center">Best selling collection!</p>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="lines">
+                            <p class="text-center">US.POLO, Adidias..</p>
+                            <p class="text-center emphasis">Min. 50-80% off</p>
+                            <p class="text-center">T-shirt jeans and more!</p>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-image">
+                        </div>
+                        <div class="lines">
+                            <p class="text-center">Fastrack,Wrogn..</p>
+                            <p class="text-center emphasis">Min. 20-70% off</p>
+                            <p class="text-center">#stylish sunglasses</p>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-image">
+                        </div>
+                        <div class="lines">
+                            <p class="text-center">Branded Kurtas..</p>
+                            <p class="text-center emphasis">From Rs200</p>
+                            <p class="text-center">Libas, W, saara..</p>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-image">
+                        </div>
+                        <div class="lines">
+                            <p class="text-center">GIrls Frocks..</p>
+                            <p class="text-center emphasis">From rs149</p>
+                            <p class="text-center">Hurry dont miss it out!</p>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-image">
+                        </div>
+                        <div class="lines">
+                            <p class="text-center">HRX, Lotto..</p>
+                            <p class="text-center emphasis">From Rs199</p>
+                            <p class="text-center">Sports shoes</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <footer class="flex-all-centre">
+        <p>Copyright &copy; Mycart.com</p>
+    </footer>
+</body>
+
+</html>
