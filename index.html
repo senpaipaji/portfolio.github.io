@@ -1,155 +1,191 @@
 <!DOCTYPE html>
+<html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BunkBuddy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=League+Spartan&family=Nova+Flat&family=Open+Sans&family=Oswald&family=Roboto+Condensed:wght@700&family=Roboto+Slab:wght@600&family=Source+Sans+Pro&family=Square+Peg&display=swap"
-        rel="stylesheet">
-    <title>Senpai:)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #grad1 {
+
+            height: 100vh;
+            background-size: 200% 200%;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to bottom right,
+                    #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            animation: gradient 15s ease infinite;
+            background-attachment: fixed;
+            padding: 5vw;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            position: relative;
+            top: 140px;
+            width: 100%;
+            color: 222831;
+            box-sizing: border-box;
+            margin: 5vh 0vw;
+
+        }
+
+        h1 {
+            /* margin: 25vh 5vw; */
+            mix-blend-mode: screen;
+            background-color: white;
+            /* Responsive font size */
+            /* Center the text container */
+            top: 10vh;
+            width: 100%;
+            text-align: left;
+            padding: 10px 0px;
+            position: absolute;
+        }
+
+        hr {
+            background-color: white;
+            height: 3px;
+            border: none;
+            border-radius: 1px;
+        }
+
+        .info {
+            width: 100%;
+            height: 200vh;
+            display: block;
+            position: relative;
+        }
+
+        p {
+            /* background-color: white; */
+            /* Responsive font size */
+            /* Center the text container */
+            color: white;
+            font-size: large;
+            text-align: left;
+            padding: 10px;
+        }
+
+        footer {
+            height: 5vh;
+            background-color: black;
+
+        }
+
+        /*Use this class when you want your content to be hidden*/
+        .BeforeScroll {
+            height: 100px;
+            /*Whatever you want*/
+            width: 100%;
+            position: absolute;
+            display: inline-flex;
+            bottom: 0;
+            padding: 10px 0px;
+            font-size: 50px;
+            display: none;
+
+            /*Whatever you want*/
+            /* display: none; */
+        }
+
+
+        /*Use this class when you want your content to be shown after some scroll*/
+        .AfterScroll {
+            height: 100px;
+            /*Whatever you want*/
+            width: 100%;
+            position: absolute;
+            display: inline-flex;
+            bottom: 0;
+            padding: 10px 0px;
+            font-size: 50px;
+            display: block;
+        }
+
+
+
+        @media screen and (min-width: 361px) {
+            div h1 {
+                font-size: 60px;
+            }
+        }
+
+        @media screen and (max-width: 810px) {
+            div h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+    <!--include these script in head section or wherever you want-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Take your div into one js variable
+            var div = $("#divToShowHide");
+            //Take the current position (vertical position from top) of your div in the variable
+            var pos = div.position();
+            //Now when scroll event trigger do following
+            $(window).scroll(function () {
+                var windowpos = $(window).scrollTop();
+                //Now if you scroll more than 100 pixels vertically change the class to AfterScroll
+                // I am taking 100px scroll, you can take whatever you need
+                if (windowpos >= (pos.top - 100)) {
+                    div.addClass("AfterScroll");
+                }
+                //If scroll is less than 100px, remove the class AfterScroll so that your content will be hidden again 
+                else {
+                    s.removeClass("AfterScroll");
+                }
+                //Note: If you want the content should be shown always once you scroll and do not want to hide it again when go to top agian, no need to write the else part
+            });
+        });
+    </script>
+
 </head>
-<style>
-    * {
-        /*      font-family: 'League Spartan', sans-serif;
-
-    font-family: 'Nova Flat', cursive;
-
-    font-family: 'Open Sans', sans-serif;
-
-    font-family: 'Oswald', sans-serif;
-
-    font-family: 'Roboto Condensed', sans-serif;
-
-    font-family: 'Roboto Slab', serif;
-    
-    font-family: 'Source Sans Pro', sans-serif;
-    
-    font-family: 'Square Peg', cursive;*/
-        font-family: 'Oswald', sans-serif;
-
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        background-image: url("https://cdn.pixabay.com/photo/2020/06/28/04/07/cat-5347790_1280.jpg");
-        background-size: 100vw;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-
-    .blank {
-        min-height: 432px;
-        /* height: 105vw; */
-
-    }
-
-    p {
-        display: inline;
-    }
-
-    h1 {
-        font-family: 'Oswald', sans-serif;
-        font-size: 15vw;
-        color: white;
-        margin-left: 2vw;
-        position: absolute;
-    }
-    main{
-        box-sizing: border-box;
-    }
-
-    .container {
-        padding: 15px;
-        background-color: white;
-        height: 75vh;
-        
-    }
-    .container2{
-        position: relative;
-        
-
-    }
-    .container3{
-        background-color: black;
-        color: white;
-        padding: 15px;
-        height: 30vh;
-        font-family: 'Nova Flat', cursive;
-        margin-top: 0.8vh;
-    }
-   
-
-    .heading1 {
-        display: block;
-        position: relative;
-        height: 17.5vw;
-    }
-
-    .heading2 {
-        display: block;
-        position: relative;
-        height: 17.5vw;
-    }
-
-    h2 {
-        font-size: 15vw;
-        color: black;
-        margin-left: 2vw;
-        position: absolute;
-        font-family: 'Nova Flat', cursive;
-
-    }
-
-    .heading2 h2 {
-        position: absolute;
-        right: 0;
-        color: black;
-        text-align: end;
-    }
-
-    .p1 {
-        position: absolute;
-        right: 0;
-        text-align: end;
-        font-size: 7vw;
-
-    }
-    footer{
-        font-family: 'Open Sans', sans-serif;
-        background-color: black;
-        color: gray;
-    }
-</style>
 
 <body>
-    <header></header>
-    <main>
-        <div class="blank"></div>
-        <div class="heading1">
-            <h1>Hii There</h1>
-        </div>
-
+    <div id="grad1">
+        <h1>Hello! Am Senpai</h1>
         <div class="container">
-            <div class="container2">
-                <p class="p1">I am</p><br>
-                <div class="heading2">
-                    <h2>Senpai</h2>
-                </div>
+            <div class="info">
                 <hr>
-                <div class="container3">
-                    <p>this  site is currently under development</p>
-                </div>
+                <p>
+                    Scroll Down
+                </p>
+                <div id="divToShowHide" class="BeforeScroll"><span>Beta:V 2.1</span></div>
             </div>
         </div>
-    </main>
-    <footer>
-        <p>version 0.1</p>
-    </footer>
+
 </body>
 
 </html>
