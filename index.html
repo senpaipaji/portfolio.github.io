@@ -1,190 +1,146 @@
 <!DOCTYPE html>
-<html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BunkBuddy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <style>
-        * {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        #grad1 {
-
-            height: 100vh;
-            background-size: 200% 200%;
-            background-color: red;
-            /* For browsers that do not support gradients */
-            background-image: linear-gradient(to bottom right,
-                    #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            animation: gradient 15s ease infinite;
-            background-attachment: fixed;
-            padding: 5vw;
-            display: flex;
-            justify-content: center;
-
-        }
-
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .container {
-            position: relative;
-            top: 140px;
-            width: 100%;
-            color: 222831;
-            box-sizing: border-box;
-            margin: 5vh 0vw;
-
-        }
-
-        h1 {
-            /* margin: 25vh 5vw; */
-            mix-blend-mode: screen;
-            background-color: white;
-            /* Responsive font size */
-            /* Center the text container */
-            top: 10vh;
-            width: 100%;
-            text-align: left;
-            padding: 10px 0px;
-            position: absolute;
-        }
-
-        hr {
-            background-color: white;
-            height: 3px;
-            border: none;
-            border-radius: 1px;
-        }
-
-        .info {
-            width: 100%;
-            height: 200vh;
-            display: block;
-            position: relative;
-        }
-
-        p {
-            /* background-color: white; */
-            /* Responsive font size */
-            /* Center the text container */
-            color: white;
-            font-size: large;
-            text-align: left;
-            padding: 10px;
-        }
-
-        footer {
-            height: 5vh;
-            background-color: black;
-
-        }
-
-        /*Use this class when you want your content to be hidden*/
-        .BeforeScroll {
-            height: 100px;
-            /*Whatever you want*/
-            width: 100%;
-            position: absolute;
-            display: inline-flex;
-            bottom: 0;
-            padding: 10px 0px;
-            font-size: 50px;
-            display: none;
-
-            /*Whatever you want*/
-            /* display: none; */
-        }
-
-
-        /*Use this class when you want your content to be shown after some scroll*/
-        .AfterScroll {
-            height: 100px;
-            /*Whatever you want*/
-            width: 100%;
-            position: absolute;
-            display: inline-flex;
-            bottom: 0;
-            padding: 10px 0px;
-            font-size: 50px;
-            display: block;
-        }
-
-
-
-        @media screen and (min-width: 361px) {
-            div h1 {
-                font-size: 60px;
-            }
-        }
-
-        @media screen and (max-width: 810px) {
-            div h1 {
-                font-size: 40px;
-            }
-        }
-    </style>
-    <!--include these script in head section or wherever you want-->
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            //Take your div into one js variable
-            var div = $("#divToShowHide");
-            //Take the current position (vertical position from top) of your div in the variable
-            var pos = div.position();
-            //Now when scroll event trigger do following
-            $(window).scroll(function () {
-                var windowpos = $(window).scrollTop();
-                //Now if you scroll more than 100 pixels vertically change the class to AfterScroll
-                // I am taking 100px scroll, you can take whatever you need
-                if (windowpos >= (pos.top - 100)) {
-                    div.addClass("AfterScroll");
-                }
-                //If scroll is less than 100px, remove the class AfterScroll so that your content will be hidden again 
-                else {
-                    s.removeClass("AfterScroll");
-                }
-                //Note: If you want the content should be shown always once you scroll and do not want to hide it again when go to top agian, no need to write the else part
-            });
-        });
-    </script>
-
+    <title>MeJiv</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script>
 </head>
 
 <body>
-    <div id="grad1">
-        <h1>Hello! Am Senpai</h1>
-        <div class="container">
-            <div class="info">
-                <hr>
-                <p>
-                    Scroll Down
-                </p>
-                <div id="divToShowHide" class="BeforeScroll"><span>Beta:V 2.1</span></div>
-            </div>
+    <header class="header">
+        <div class="main__logo">
+            <a href="" class="main__logo__link">Jivhesh</a>
         </div>
+        <i class="uil uil-apps nav__open" id="open"></i>
+        <div class="navbar" id="nav-menu">
+            <div class="nav__logo">
+                <a href="" class="nav__logo__link">Jivhesh</a>
+            </div>
+            <div class="nav__body"></div>
+            <ul class="nav__List">
+                <li class="nav__list__item"><a href="#" class="nav__link">
+                        <i class="uil uil-home"></i> Home
+                    </a></li>
+                <li class="nav__list__item"><a href="#" class="nav__link">
+                        <i class="uil uil-user"></i> About
+                    </a></li>
+                <li class="nav__list__item"><a href="#" class="nav__link">
+                        <i class="uil uil-instagram"></i> Contact
+                    </a></li>
+                <i class="uil uil-times nav__close" id="close"></i>
+            </ul>
+        </div>
+        <main>
+            <section class="home__section">
+                <div class="home__container">
+                    <div class="home__front">
+                        <div class="home__img">
+                        </div>
+                    </div>
+                    <div class="home__content">
+                        <div class="home__img">
+                            <img class="social__img"
+                                src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=1480&t=st=1660222719~exp=1660223319~hmac=d8045d36bf3f86fcc3e79fc4b027dca4df5bef4d1299817a588a175c5c2bd157"
+                                alt="">
+                        </div>
+                        <div class="home__social">
+
+                            <a href="#" class="home__social-icon">
+                                <i class="uil uil-github"></i>
+                            </a>
+                            <br>
+                            <a href="#" class="home__social-icon">
+                                <i class="uil uil-twitter"></i>
+                            </a>
+                            <br>
+                            <a href="#" class="home__social-icon">
+                                <i class="uil uil-linkedin-alt"></i>
+                            </a>
+                        </div>
+                        <div class="home__title">
+                            <h1>Hi! i am Jivhesh</h1>
+                        </div>
+                        <div class="home__subtitle">
+                            <h3 class="home__subtitle">
+                                Student of Computer Engineering
+                            </h3>
+                        </div>
+
+                        <div class="home__button">
+                            <span>
+                                <a href="#contact" class="button">
+                                    Contact Me <i class="uil uil-message"></i>
+                                </a>
+                            </span>
+                        </div>
+                        <div class="home__mouse-scroll" id="mouse-scroll">
+                            <a href="" class="home__scroll-button">
+                                <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                                <span class="home__scroll-name"> scroll down <i
+                                        class="uil uil-angle-double-down"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="about">
+                
+                <div class="about__container">
+                    <div class="about__frontpage">
+                        <div class="about__header">
+                            <h1 class="about__heading">About Me</h1>
+                            <h3 class="about__subheading">My introduction</h3>
+                        </div>
+                    </div>
+
+                    <div class="about__content">
+                        <div class="about__discription">
+                            I am a student from second year Computer Engineering in B.E ; Aspiring Web developer with
+                            extensive knowledge and contain impulse to acquire more. Looking forward for mentorship
+                            regarding programming. <br><br>Delivering good communication, performance and quality work.
+                        </div>
+                        <dib class="about__cards">
+                            <ul class="about__card-list">
+                                <li class="about__card-item">
+                                    <div class="about__numeric">
+                                        <i class="uil uil-12-plus" id="about-experiance"></i>
+                                    </div>
+                                    <div class="numeric-title">Months experiance <br>in coding</div>
+                                </li>
+                                <li class="about__card-item">
+                                    <div class="about__numeric">
+                                        <i class="uil uil-0-plus"></i>
+                                    </div>
+                                    <div class="numeric-title">Projects <br>completed
+                                    </div>
+                                </li>
+                                <li class="about__card-item">
+                                    <div class="about__numeric">
+                                        <i class="uil uil-0-plus"></i>
+                                    </div>
+                                    <div class="numeric-title">Work <br>Experiance
+                                    </div>
+                                </li>
+                            </ul>
+                        </dib>
+                    </div>
+             
+                        <img class="about__img" src="https://img.freepik.com/free-vector/isometric-cms-concept_23-2148807389.jpg?w=1480&t=st=1660239973~exp=1660240573~hmac=21c96e151b6c08527f037aa3b761b6c50a04f38d903403e3698fdffc04e3090f"
+                        alt="">
+                    
+                </div>
+                    
+            </section>
+
+        </main>
+    </header>
+
 
 </body>
 
