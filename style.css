@@ -200,7 +200,7 @@ ul {
 /* ///////////////////////////////////////Home////////////////////////// */
 
 .home__section {
-    background-image: url("portfolio/background.jpg");
+    background-image: url(background.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
