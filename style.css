@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+:root {
+
+    /* colors */
+
+    --first-color: #111111;
+
+    --first-color-alt: rgba(128, 128, 128, .3);
+
+    --second-color: #1f1f1f;
+
+    --second-color-alt: #333333;
+
+    --third-color: #ff4655;
+
+    --third-color-alt: #0f1923;
+
+    --title-color-light: #ff4655;
+
+    --title-color-dark: #0f1923;
+
+    --text-color: #f9f9f9;
+
+    --body-color: #ece8e1;
+
+    --text-color-light: hsl(214, 8%, 65%);
+    --input-color: hsl(214, 70%, 96%);
+
+
+    --container-color: #FFF;
+    /* Font and Typography */
+    --body-font: 'Poppins', sans-serif;
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    --font-1: "'Poppins', sans-serif";
+    --font-2: "'Rubik Maze', cursive";
+
+    /* margenes bottom */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+    /* z index */
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    cursor: default;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    :root {
+
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+* {
+    /* color: var(--first-color); */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: var(--body-color);
+
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+/* ///////////////////////////////////////navbar////////////////////////// */
+header {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+
+    transition: .3s;
+    position: sticky;
+    top: 0;
+    font-size: 1rem;
+    width: 100%;
+    min-height: 56px;
+    background-color: var(--first-color);
+    border-bottom: 2px solid rgba(51, 51, 51, .25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+    z-index: 100;
+    font-weight: var(--font-medium);
+    color: var(--text-color);
+}
+
+.nav__logo {
+
+    font-size: 1.2rem;
+    font-weight: var(--font-medium);
+    padding: .1rem 1rem;
+    border-radius: 1.25rem;
+    background: rgba(0, 0, 0, 0) linear-gradient(135deg, rgb(255, 51, 66) 0%, rgb(255, 48, 64) 0.01%, rgb(255, 125, 102) 100%) repeat scroll 0% 0%
+}
+
+.nav__logo__link {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.nav__logo:hover {
+    background: rgba(0, 0, 0, 0) linear-gradient(135deg, rgb(255, 51, 66) 0%, rgb(255, 48, 64) 0.01%, rgb(255, 125, 102) 50%) repeat scroll 0% 0%
+}
+
+.nav__list__item {
+    border-radius: 6.4px;
+    margin-right: 1rem;
+    padding: 4px 10px;
+    position: relative;
+}
+
+.underline {
+    transition: .1s;
+    position: absolute;
+    bottom: -0.95rem;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--third-color);
+}
+
+.nav__list__item:hover {
+    transition: .1s;
+    background-color: var(--first-color-alt);
+}
+
+ul {
+    display: flex;
+}
+
+.nav__link {
+    color: var(--text-color);
+}
+
+.nav__open {
+    z-index: var(--z-tooltip);
+    position: absolute;
+    top: 0;
+    color: var(--first-color);
+    right: .5rem;
+    font-size: var(--h2-font-size);
+}
+
+.nav__close {
+    display: none;
+}
+
+/* ///////////////////////////////////////Home////////////////////////// */
+
+.home__section {
+    background-image: url(/utils/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: var(--third-color-alt);
+    height: 91.5vh;
+    display: flex;
+    padding: 0 5vw;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.home__container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5rem;
+    border-radius: 19px;
+    background-color: #11111182;
+}
+
+.home__social {
+    position: absolute;
+}
+
+.home__title {
+    
+    font-family: 'League Gothic', sans-serif;
+    font-weight: 600;
+    /* font-size: 7.5rem; */
+    line-height: .94;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* font-family: 'League Gothic', sans-serif; */
+    color: var(--body-color);
+    font-size: 3rem;
+}
+
+.home__subtitle {
+    font-size: 1.25rem;
+    color: var(--text-color);
+}
+
+.home__discription {
+    font-weight: var(--font-medium);
+}
+
+/*  */
+
+.button {
+    z-index: 10;
+    padding: .25rem;
+    position: relative;
+    align-items: center;
+    margin-top: 1rem;
+    min-width: 100px;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--third-color);
+    transition: .2s ease;
+
+}
+
+.button:hover {
+    background-color: var(--first-color-alt);
+    translate: 0 10px;
+    transition: .2s ease;
+}
+
+.button__border-top {
+    position: absolute;
+    top: -.5rem;
+    padding: 0 4rem;
+    left: -.5rem;
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: 1px solid #887e77;
+    border-bottom: none;
+    border-right: none;
+}
+
+.button__border-down {
+    position: absolute;
+    bottom: -.5rem;
+    padding: 0 4rem;
+    right: -.5rem;
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: 1px solid #887e77;
+    border-top: none;
+    border-left: none;
+}
+
+.button__anchor {
+    font-size: 0.987rem;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 150px;
+    font-weight: 600;
+    color: var(--body-color);
+}
+
+.vl {
+    display: inline-block;
+    position: absolute;
+    border-left: 2px solid #797d7a;
+    height: 100%;
+    width: 2px;
+}
+
+.triangle{
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 0;
+    height: 0;
+    border-top: 4rem solid transparent;
+    border-right:4rem solid transparent ;
+    border-left: 4rem solid var(--body-color) ;
+}
+
+
+
+/* ///////////////////////////////////////////about//////////////// */
+.about{
+    cursor: default;
+    position: relative;
+}
+.about__container {
+    margin-top: 5vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10vw;
+    align-items: left;
+}
+
+.about__backtext{
+    text-shadow: 10px 10px 0 #dcd9d3;
+    font-family: 'League Gothic', sans-serif;
+    color: var(--body-color);
+    position: relative;
+    font-size:20rem;
+}
+.we-are{
+    z-index: -10;
+    top:-10vh;
+    position: absolute;
+}
+.coders{
+    position: absolute;
+    /* bottom:-1vh; */
+    right: 0;
+
+}
+.about__frontpage {
+    display: flex;
+    flex-direction: column;
+}
+
+.about__header {
+    translate:  -5vw 0;
+}
+
+.about__heading {
+    display: inline;
+    color: var(--third-color);
+
+    font-family: 'League Gothic', sans-serif;
+    font-weight: 600;
+    font-size: 7.5rem;
+    line-height: .94;
+    text-transform: uppercase;
+
+}
+
+.about__subheading {
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+}
+.about__content {
+    
+    margin-top: 5vh;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    align-items: center;
+}
+.highlight{
+    
+    background-color: var(--body-color);
+    color: var(--first-color);
+    
+}
+.about__discription {
+    
+    font-size: 1.25rem;
+}
+
+.about__cards {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.about__card-list {
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.about__card-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.about__numeric {
+    font-size: 5rem;
+    color: var(--text-color-light);
+    display: flex;
+    height: 100px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.numeric-title {
+    color: var(--text-color);
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-semi-bold);
+}
+
+#about-experiance {
+    color: var(--first-color);
+
+}
+
+.about__img {
+    display: block;
+    bottom: 0%;
+    right: 0;
+    height: 345px;
+    position: absolute;
+    z-index: -1;
+}
+
+/*  */
+
+@media screen and (max-width:600px) {
+    .navbar {
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+        border-bottom-left-radius: 45px;
+        border-bottom-right-radius: 45px;
+        transition: .5s;
+        translate: 0 -105%;
+        position: fixed;
+        height: 25%;
+        bottom: 0;
+        /* translate: 0 100%; */
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    ul {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .nav__logo {
+        display: none;
+    }
+
+    .nav__close {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: .5rem;
+        font-size: var(--big-font-size);
+    }
+
+    .social__img {
+        height: 168px;
+    }
+
+    .about__img {
+        display: none;
+    }
+}
+
+.nav__show {
+
+    translate: 0%;
+
+}
